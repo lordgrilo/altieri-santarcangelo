@@ -34,7 +34,7 @@ comments :
 # Internal nav
 nav:
   - GALLERY: "https://lordgrilo.github.io/altieri-santarcangelo/gallery/"  
-  # - JOURNAL: "https://lordgrilo.github.io/altieri-santarcangelo/journal/"
+  - JOURNAL: "https://lordgrilo.github.io/altieri-santarcangelo/journal/"
   - ABOUT: "https://lordgrilo.github.io/altieri-santarcangelo/about/"
 
 # All translation keys
