@@ -1,16 +1,16 @@
 # Site settings
 title: In memory of Rita Altieri and Carlo Santarcangelo
-email: ""
+email: "petri.giovanni@gmail.com"
 description: "Memorial gallery"
 url: "https://lordgrilo.github.io"
 baseurl: "/altieri-santarcangelo"
-facebook_username: ""
-twitter_username: ""
-instagram_username: ""
-github_username:  ""
-deviantart_username: ""
-flickr_username: ""
-discus_shortname: ""
+# facebook_username: ""
+# twitter_username: ""
+# instagram_username: ""
+github_username:  "lordgrilo"
+# deviantart_username: ""
+# flickr_username: ""
+# discus_shortname: ""
 share: false
 
 # Owner/author information
