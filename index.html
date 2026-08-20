@@ -1,233 +1,48 @@
 ---
-layout: homegit
+layout: home
 main-title: "RITA ALTIERI&#8226;CARLO SANTARCANGELO"
 subtitle: "In loving memory"
-description: "[under construction]"
-images:
- - image_path: /img/slider/home01.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home02.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home03.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home05.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home06.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home07.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home08.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home09.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home10.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home11.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home12.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home13.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home14.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home15.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home16.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home17.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home18.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home19.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home20.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home21.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home22.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home23.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home24.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home25.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home26.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home27.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home28.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home29.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home30.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home31.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home32.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home33.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home34.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home35.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home36.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home37.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home38.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home39.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home40.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home41.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home42.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home43.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home44.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home45.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home46.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home47.jpg
-   gallery-folder: /img/slider/
- - image_path: /img/slider/home48.jpg
-   gallery-folder: /img/slider/
+description: ""
 ---
 
-<html class="no-js" lang="en">
-<head>
-	<meta content="charset=utf-8">
-
-<!-- CSS -->
-     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" type="text/css" media="screen" />
-      <link rel="stylesheet" href="{{ site.baseurl }}/css/galleries.css" media="screen" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/WYSIWYG.css" media="screen" />
 
-
-
-	<!-- Modernizr -->
-  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
-
-
-
-  
-
-</head>
-
-<body class="fullscreen">
-
-<!-- MAIN CONTENT SECTION  _____________________________________________-->
-	<section id="content" role="main">
-		<div class="wrapper">
-
-			<!-- WYSIWYG -->
+<section id="content" role="main">
+	<div class="wrapper">
 
 		<div class="position-absolute">
-				<h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2>
-				<h2>{{ page.subtitle }}</h2> 
-                     <div class="entry-summary">
-							<p>{{ page.description }}</p>
-						</div><br />
-			</div>
-			
-			<div class="gallery fullscreen-gallery kenburns-gallery">
+			<h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2>
+			<h2>{{ page.subtitle }}</h2>
+			<div class="entry-summary">
+				<p>{{ page.description }}</p>
+			</div><br />
+		</div>
 
-				<canvas id="kenburns"></canvas>
-				
-{% for image in page.images %}  	
+		<div class="gallery fullscreen-gallery kenburns-gallery">
 
-				<figure class="gallery-item">
-					<header class='gallery-icon'>
+			<canvas id="kenburns"></canvas>
 
-<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
-<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
-	
-				</header>	
-				</figure>
-
+<!-- The slideshow shows the home*.jpg files in /img/photos/. Photos added with
+     publish.sh are named by date and go to the gallery, not here. To feature a
+     new one on this page too, rename it so it starts with "home". -->
+{% assign slides = site.static_files | where_exp: "f", "f.path contains '/img/photos/home'" | sort: "name" %}
+{% for image in slides %}
+			<figure class="gallery-item">
+				<header class="gallery-icon">
+					<img src="{{ image.path | prepend: site.baseurl }}" loading="lazy" alt="">
+				</header>
+			</figure>
 {% endfor %}
 
-				</div>
-			<!-- END WYSIWYG -->
-			
-	
-		</div><!-- END .wrapper -->
-		
-	</section>
+		</div>
 
-<div id="footer" role="contentinfo">
-		<ul class="soc-icons">
+	</div><!-- END .wrapper -->
+</section>
 
-                 {% if site.facebook_username %}
-			<li>
-   <a href="https://facebook.com/{{ site.facebook_username }}" style="
-color:#dddddd; target="_blank" title="Facebook">
-                       <i class="fa fa-facebook"></i>
-                     </span>
-</a></li>
-    {% endif %}
- {% if site.twitter_username %}
-			<li>
-   <a href="https://twitter.com/{{ site.twitter_username }}" style="
-color:#dddddd; target="_blank" title="Twitter">
-                       <i class="fa fa-twitter"></i>
-                     </span>
-</a></li>
-    {% endif %}
-                {% if site.instagram_username %}
-			<li>
-   <a href="https://instagram.com/{{ site.instagram_username }}" style="
-color:#dddddd; target="_blank" title="Instagram">
-                       <i class="fa fa-instagram"></i>
-                     </span>
-</a></li>
-    {% endif %}
-                    {% if site.flickr_username %}
-						<li>
-   <a href="https://flickr.com/photos/{{ site.flickr_username }}" style="
-color:#dddddd; target="_blank" title="Flickr">
-              <i class="fa fa-flickr"></i>
-                     </span>
- </a></li>	
-     {% endif %}
-                    {% if site.deviantart_username %}
-			<li>
-   <a href="http://{{ site.deviantart_username }}.deviantart.com" style="
-color:#dddddd; target="_blank" title="DeviantArt">
-<i class="fa fa-deviantart"></i> </span>
-</a></li>	
-    {% endif %}
-                    {% if site.github_username %}
-                <li>
-   <a href="https://github.com/{{ site.github_username }}" style="
-color:#dddddd; target="_blank" title="Github">
-              <i class="fa fa-github"></i>
-                     </span>
-                   {% endif %}
-<li>
-    <a href="mailto:{{ site.email }}" style="
-color:#dddddd; target="_blank" title="Email">
-              <i class="fa fa-envelope-o"></i></span>
-          </a> </li>
-	
-					
-		</ul>	
-	</div>
-
-  
 <!-- jQuery -->
-  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <script src="{{ site.baseurl }}/js/retina.min.js"></script> 
-
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/js/retina.min.js"></script>
 <!-- include mousewheel plugins -->
 <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
 <!-- include gallery cycle plugin -->
@@ -238,7 +53,3 @@ color:#dddddd; target="_blank" title="Email">
 <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
 <!-- include custom script -->
 <script src="{{ site.baseurl }}/js/scripts.js"></script>
-
-
-       </body>
-    </html>
