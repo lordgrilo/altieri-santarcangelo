@@ -34,7 +34,6 @@ comments :
 # Internal nav
 nav:
   - GALLERY: "https://lordgrilo.github.io/altieri-santarcangelo/gallery/"  
-  - JOURNAL: "https://lordgrilo.github.io/altieri-santarcangelo/journal/"
   - ABOUT: "https://lordgrilo.github.io/altieri-santarcangelo/about/"
 
 # All translation keys
@@ -51,13 +50,6 @@ port:             	 4000
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-paginate: 5
-paginate_path: "/journal/page:num/"
-permalink: "/journal/:title/"
-categories_path: "/journal/category/"
-tags_path: "/journal/tag/"
-gems: 
- - jekyll-paginate
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # SiteMap
