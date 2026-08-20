@@ -28,16 +28,21 @@ header-img: "img/gallery-bg.jpg"
 <script src="{{ site.baseurl }}/js/scripts.js"></script>
 
 <script>
-jQuery(function($) {
-	$('a.popup').magnificPopup({
-		type: 'image',
-		gallery: { enabled: true, navigateByImgClick: true, preload: [0, 1] }
-	});
+// the page layout loads jQuery again after this, and the second copy has no
+// plugins on it - so hold on to this one rather than looking it up later
+(function($) {
+	$(function() {
+		$('a.popup').magnificPopup({
+			type: 'image',
+			gallery: { enabled: true, navigateByImgClick: true, preload: [0, 1] }
+		});
 
-	// lazy-loaded images have no height when isotope first measures them,
-	// so re-run the layout as each one arrives
-	$('.masonry-gallery img').on('load', function() {
-		$('.masonry-gallery.gallery').isotope('layout');
+		// lazy-loaded images have no height when isotope first measures them,
+		// so re-run the layout as each one arrives
+		var $grid = $('.masonry-gallery.gallery');
+		$('.masonry-gallery img').on('load', function() {
+			if ($grid.data('isotope')) { $grid.isotope('layout'); }
+		});
 	});
-});
+})(jQuery);
 </script>
