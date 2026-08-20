@@ -1,6 +1,9 @@
 :root {
-	--ink: #111;
-	--muted: #999;
+	--bg:     #f2e7d8;   /* warm cream */
+	--ink:    #2a1810;   /* espresso */
+	--muted:  #8c6146;   /* milky coffee */
+	--accent: #c1301d;   /* nescafé red */
+	--frame:  #e3d2ba;   /* placeholder behind a loading photo */
 	--gap: 10px;
 	--pad: 3rem;
 	--max: 1500px;
@@ -10,11 +13,12 @@
 
 body {
 	margin: 0;
-	background: #fff;
+	background: var(--bg);
 	color: var(--ink);
 	font: 400 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
+body.locked { overflow: hidden; }
 
 header {
 	display: flex;
@@ -39,10 +43,10 @@ header {
 nav a {
 	margin-right: 1.5rem;
 	text-decoration: none;
-	color: var(--ink);
+	color: var(--muted);
 }
 nav a:last-child { margin-right: 0; }
-nav a:hover, nav a.current { color: var(--muted); }
+nav a:hover, nav a.current { color: var(--accent); }
 
 main {
 	max-width: var(--max);
@@ -50,12 +54,13 @@ main {
 	padding: 0 var(--pad) 5rem;
 }
 
-/* photo grid - CSS columns is masonry with no JavaScript */
+/* photo grid - CSS columns is masonry with no layout code */
 .grid { columns: 2; column-gap: var(--gap); }
 
 .grid a {
 	display: block;
 	margin: 0 0 var(--gap);
+	cursor: zoom-in;
 	-webkit-column-break-inside: avoid;
 	break-inside: avoid;
 }
@@ -64,13 +69,30 @@ main {
 	display: block;
 	width: 100%;
 	height: auto;
-	background: #f2f2f2;
+	background: var(--frame);
 }
 .grid a:hover img { opacity: .88; }
 
+/* fullscreen photo - click anywhere or press Esc to close */
+#lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3vmin;
+	background: rgba(30, 17, 10, .95);
+	cursor: zoom-out;
+	animation: fade .18s ease-out;
+}
+#lightbox[hidden] { display: none; }
+#lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
 main.prose > * { max-width: 36rem; }
 main.prose h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
-main.prose a { color: var(--ink); }
+main.prose a { color: var(--accent); }
 
 @media (max-width: 900px) {
 	:root { --pad: 1.25rem; }

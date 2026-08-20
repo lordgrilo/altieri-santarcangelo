@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <meta name="theme-color" content="#f2e7d8">
   <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
 </head>
@@ -22,6 +23,36 @@
 <main{% if page.class %} class="{{ page.class }}"{% endif %}>
 {{ content }}
 </main>
+
+<div id="lightbox" hidden><img alt=""></div>
+<script>
+(function () {
+	var grid = document.querySelector('.grid');
+	if (!grid) return;
+	var box = document.getElementById('lightbox');
+	var full = box.querySelector('img');
+
+	function close() {
+		box.hidden = true;
+		full.removeAttribute('src');   // also cancels a download still in flight
+		document.body.classList.remove('locked');
+	}
+
+	grid.addEventListener('click', function (e) {
+		var link = e.target.closest('a');
+		if (!link) return;
+		e.preventDefault();
+		full.src = link.href;
+		box.hidden = false;
+		document.body.classList.add('locked');
+	});
+
+	box.addEventListener('click', close);
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') close();
+	});
+})();
+</script>
 
 </body>
 </html>
