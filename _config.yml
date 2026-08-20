@@ -1,37 +1,14 @@
-# Site settings
-title: In memory of Rita Altieri and Carlo Santarcangelo
-email: "petri.giovanni@gmail.com"
-description: "Memorial gallery"
+title: "Rita Altieri e Carlo Santarcangelo"
+description: "In loving memory"
 url: "https://lordgrilo.github.io"
 baseurl: "/altieri-santarcangelo"
-# facebook_username: ""
-# twitter_username: ""
-# instagram_username: ""
-github_username:  "lordgrilo"
-# deviantart_username: ""
-# flickr_username: ""
+email: "petri.giovanni@gmail.com"
 
-# Owner/author information
-owner:
-  name:   Giovanni Petri
-  avatar: avatar.png
-  favicon: favicon.ico
-  info: website in memory of Rita Altieri and Carlo Santarcangelo
+# shown top-left in the header
+wordmark: "Rita &amp; Carlo"
 
-# Internal nav
 nav:
-  - GALLERY: "/gallery/"
-  - ABOUT: "/about/"
-
-
-# Server
-destination:      	 ./_site
-port:             	 4000
-
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-exclude: ["node_modules", "README.md"]
-
+  - title: "Photos"
+    url: "/"
+  - title: "About"
+    url: "/about/"

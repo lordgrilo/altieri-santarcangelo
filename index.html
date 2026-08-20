@@ -1,52 +1,14 @@
 ---
-layout: home
-main-title: "RITA ALTIERI&#8226;CARLO SANTARCANGELO"
-subtitle: "In loving memory"
-description: ""
+layout: default
 ---
+<!-- Every image in /img/photos/ shows up here on its own. Nothing to edit:
+     drop photos in ../inbox_photos and run ./publish.sh -->
+{%- assign photos = site.static_files | where_exp: "f", "f.path contains '/img/photos/'" | sort: "name" %}
 
-<link rel="stylesheet" href="{{ site.baseurl }}/css/WYSIWYG.css" media="screen" />
-
-<section id="content" role="main">
-	<div class="wrapper">
-
-		<div class="position-absolute">
-			<h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2>
-			<h2>{{ page.subtitle }}</h2>
-			<div class="entry-summary">
-				<p>{{ page.description }}</p>
-			</div><br />
-		</div>
-
-		<div class="gallery fullscreen-gallery kenburns-gallery">
-
-			<canvas id="kenburns"></canvas>
-
-<!-- The slideshow shows the home*.jpg files in /img/photos/. Photos added with
-     publish.sh are named by date and go to the gallery, not here. To feature a
-     new one on this page too, rename it so it starts with "home". -->
-{% assign slides = site.static_files | where_exp: "f", "f.path contains '/img/photos/home'" | sort: "name" %}
-{% for image in slides %}
-			<figure class="gallery-item">
-				<header class="gallery-icon">
-					<img src="{{ image.path | prepend: site.baseurl }}" loading="lazy" alt="">
-				</header>
-			</figure>
-{% endfor %}
-
-		</div>
-
-	</div><!-- END .wrapper -->
-</section>
-
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- include mousewheel plugins -->
-<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
-<!-- include gallery cycle plugin -->
-<script src="{{ site.baseurl }}/js/jquery.cycle.min.js"></script>
-<!-- include kenburns plugins -->
-<script src="{{ site.baseurl }}/js/kenburns.min.js"></script>
-<!-- include custom script -->
-<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<div class="grid">
+{%- for photo in photos %}
+	<a href="{{ photo.path | prepend: site.baseurl }}">
+		<img src="{{ photo.path | prepend: site.baseurl }}" loading="lazy" alt="">
+	</a>
+{%- endfor %}
+</div>
